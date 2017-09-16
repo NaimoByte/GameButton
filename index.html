@@ -1,9 +1,22 @@
 <html>
   <head>
   </head>
+  
+  <button id="generate-button"> Pick a Game </button>
+  <span id="output"></span>
+  
   <body>
     
+    <script href="https://code.jquery.com/jquery-3.2.1.min.js" />
     <script>
+    
+      function generate() {
+        console.log('picking game');
+      }
+    
+      $.ready(function() {
+        $('#generate-button').onclick(generate);
+      });
       
     </script>
   </body>
