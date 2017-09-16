@@ -16,8 +16,9 @@
         console.log('picking game');
       }
     
-      $.ready(function() {
-        $('#generate-button').onclick(generate);
+      $(document).ready(function() {
+        console.log('ready');
+        $('#generate-button').click(generate);
       });
       
     </script>
