@@ -5,42 +5,13 @@
   
   <body>
     
-    <button id="generate-button"> Pick a Game </button>
-    <div id="output"></div>
+    <div id="app">
+      <button @click="pick_game" id="generate-button"> Pick a Game </button>
+      <span>{{ game }}</span>
+    </div>
   
-    
+    <script src="https://unpkg.com/vue"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-
-      function getGamesList() {
-        return new Promise(function(resolve, reject) {
-          $.get('./ListOfGames.txt', function(data) {
-            var games = data.split('\n');
-            resolve(games);
-          })
-        });
-      }
-
-      function pick(items) {
-        var index = Math.floor(Math.random() * items.length);
-        var game = items[index];
-        return game;
-      }
-    
-      function generate() {
-        console.log('picking game');
-        getGamesList().then( function(games) {
-          var game = pick(games);
-          console.log(game);
-          $('#output').text(game);
-        });
-      }
-    
-      $(document).ready(function() {
-        console.log('ready');
-        $('#generate-button').click(generate);
-      });
-      
-    </script>
+    <script src="index.js"> </script>
   </body>
 </html>
